@@ -1,3 +1,9 @@
+.orange { color: #e27d60 }
+.light-orange { color: #e8a87c }
+.blue { color: #41b3a3 }
+.light-blue { color: #7bd1ca }
+.pink { color: #c38d9e }
+
 div.full-frame {
   position: absolute;
   top: 0;
