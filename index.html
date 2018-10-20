@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 
-    <link rel="stylesheet" type="text/css" href="cdi-agora.css" media="all">
-    <script src="classes.js"></script>
-    <script src="cdi-agora.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="css/cdi-agora.css" media="all">
+    <script src="js/classes.js"></script>
+    <script src="js/cdi-agora.js"></script>
     <link rel="manifest" href="/manifest.json">
   </head>
   <body>
@@ -28,5 +27,13 @@
         <p>em <span id="updated-at"></span></p>
       </div>
     </div>
+
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function() {
+          console.log('Service Worker Registered');
+        });
+      }
+    </script>
   </body>
 </html>
