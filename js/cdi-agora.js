@@ -6,9 +6,10 @@ function formatPct(num) {
   return (Math.round(num * 1e3) / 1e3).toLocaleString('pt-BR') + " %";
 }
 
-function fillPage(yearlyCDI, monthlyCDI, updatedAt) {
+function fillPage(yearlyCDI, monthlyCDI, indexCDI, updatedAt) {
   document.getElementById("yearly-cdi").innerHTML = formatPct(yearlyCDI);
   document.getElementById("monthly-cdi").innerHTML = formatPct(monthlyCDI);
+  document.getElementById("index-cdi").innerHTML = indexCDI;
   document.getElementById("updated-at").innerHTML = updatedAt;
 }
 
@@ -25,8 +26,9 @@ b3_request.onreadystatechange = function() {
     var yearlyCDI = parseFloat(json.taxa.replace(',', '.'));
     var monthlyCDI = yearToMonth(yearlyCDI);
     var updatedAt = json.dataTaxa;
+    var indexCDI = json.indice;
 
-    fillPage(yearlyCDI, monthlyCDI, updatedAt);
+    fillPage(yearlyCDI, monthlyCDI, indexCDI, updatedAt);
     showMainPanel();
   }
 };
