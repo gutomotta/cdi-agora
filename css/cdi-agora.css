@@ -1,3 +1,10 @@
+@font-face {
+  font-family: open-sans;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+
+body { font-family: open-sans }
+
 .orange { color: #e27d60 }
 .light-orange { color: #e8a87c }
 .blue { color: #41b3a3 }
